@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 
-const TaskForm = ({ addTask, taskToEdit }) => {
-  const [task, setTask] = useState({ title: "", description: "" });
+const TaskForm = ({ addTask, updateTask, taskToEdit }) => {
+  const [task, setTask] = useState({
+    title: "",
+    description: "",
+    priority: "",
+    status: "todo",
+    dueDate: "",
+  });
 
   useEffect(() => {
     if (taskToEdit) {
@@ -16,8 +22,18 @@ const TaskForm = ({ addTask, taskToEdit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTask(task);
-    setTask({ title: "", description: "" });
+    if (taskToEdit) {
+      updateTask(task);
+    } else {
+      addTask(task);
+    }
+    setTask({
+      title: "",
+      description: "",
+      priority: "",
+      status: "todo",
+      dueDate: "",
+    });
   };
 
   return (
@@ -37,7 +53,35 @@ const TaskForm = ({ addTask, taskToEdit }) => {
         placeholder="Task Description"
         required
       ></textarea>
-      <button type="submit">Add Task</button>
+      <select
+        name="priority"
+        value={task.priority}
+        onChange={handleChange}
+        required
+      >
+        <option value="">Select Priority</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <select
+        name="status"
+        value={task.status}
+        onChange={handleChange}
+        required
+      >
+        <option value="todo">To Do</option>
+        <option value="inProgress">In Progress</option>
+        <option value="done">Done</option>
+      </select>
+      <input
+        type="date"
+        name="dueDate"
+        value={task.dueDate}
+        onChange={handleChange}
+        required
+      />
+      <button type="submit">{taskToEdit ? "Update Task" : "Add Task"}</button>
     </form>
   );
 };

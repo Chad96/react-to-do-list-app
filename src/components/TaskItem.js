@@ -1,15 +1,14 @@
 import React from "react";
 
-const TaskItem = ({ task, onMoveLeft, onMoveRight, onDelete }) => {
+const TaskItem = ({ task, setTaskToEdit, deleteTask }) => {
   return (
     <div className="task-item">
       <h3>{task.title}</h3>
       <p>{task.description}</p>
-      <div className="task-actions">
-        <button onClick={onMoveLeft}>&lt;</button>
-        <button onClick={onMoveRight}>&gt;</button>
-        <button onClick={onDelete}>Delete</button>
-      </div>
+      <p>Priority: {task.priority}</p>
+      <p>Due Date: {task.dueDate}</p>
+      <button onClick={() => setTaskToEdit(task)}>Edit</button>
+      <button onClick={() => deleteTask(task.id)}>Delete</button>
     </div>
   );
 };

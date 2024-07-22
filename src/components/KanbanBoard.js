@@ -1,30 +1,24 @@
 import React from "react";
 import KanbanColumn from "./KanbanColumn";
 
-const KanbanBoard = ({ tasks, moveTask, deleteTask }) => {
+const KanbanBoard = ({ tasks, setTaskToEdit, deleteTask }) => {
+  const columns = {
+    todo: "To Do",
+    inProgress: "In Progress",
+    done: "Done",
+  };
+
   return (
     <div className="kanban-board">
-      <KanbanColumn
-        title="To Do"
-        tasks={tasks.todo}
-        moveTask={moveTask}
-        deleteTask={deleteTask}
-        column="todo"
-      />
-      <KanbanColumn
-        title="In Progress"
-        tasks={tasks.inProgress}
-        moveTask={moveTask}
-        deleteTask={deleteTask}
-        column="inProgress"
-      />
-      <KanbanColumn
-        title="Done"
-        tasks={tasks.done}
-        moveTask={moveTask}
-        deleteTask={deleteTask}
-        column="done"
-      />
+      {Object.keys(columns).map((columnKey) => (
+        <KanbanColumn
+          key={columnKey}
+          title={columns[columnKey]}
+          tasks={tasks.filter((task) => task.status === columnKey)}
+          setTaskToEdit={setTaskToEdit}
+          deleteTask={deleteTask}
+        />
+      ))}
     </div>
   );
 };

@@ -1,16 +1,7 @@
 import React from "react";
 import TaskItem from "./TaskItem";
 
-const KanbanColumn = ({ title, tasks, moveTask, deleteTask, column }) => {
-  const handleMove = (id, direction) => {
-    const columns = ["todo", "inProgress", "done"];
-    const currentIndex = columns.indexOf(column);
-    const targetIndex = currentIndex + direction;
-    if (targetIndex >= 0 && targetIndex < columns.length) {
-      moveTask(id, column, columns[targetIndex]);
-    }
-  };
-
+const KanbanColumn = ({ title, tasks, setTaskToEdit, deleteTask }) => {
   return (
     <div className="kanban-column">
       <h2>{title}</h2>
@@ -18,9 +9,8 @@ const KanbanColumn = ({ title, tasks, moveTask, deleteTask, column }) => {
         <TaskItem
           key={task.id}
           task={task}
-          onMoveLeft={() => handleMove(task.id, -1)}
-          onMoveRight={() => handleMove(task.id, 1)}
-          onDelete={() => deleteTask(task.id, column)}
+          setTaskToEdit={setTaskToEdit}
+          deleteTask={deleteTask}
         />
       ))}
     </div>
