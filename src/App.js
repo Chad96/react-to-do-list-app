@@ -63,7 +63,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Kanban Board</h1>
+      <h1> Todo List App</h1>
       <TaskForm
         addTask={addTask}
         updateTask={updateTask}
