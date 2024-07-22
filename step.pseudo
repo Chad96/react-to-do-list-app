@@ -1,0 +1,210 @@
+// Initialize the Application
+
+1. Initialize React project
+2. Install react-router-dom for routing
+
+// Configure Routing 3. Define routes for RegistrationPage, LoginPage, HomePage, and ProfilePage 4. Protect HomePage route to ensure only logged-in users can access it
+
+// User Registration 5. Create Registration form with fields: username, password, confirm password 6. On form submission: - Validate input (ensure passwords match and fields are not empty) - Save new user data to localStorage
+
+// User Login 7. Create Login form with fields: username, password 8. On form submission: - Validate input (ensure fields are not empty) - Authenticate user by checking credentials against localStorage data - If valid, redirect user to HomePage
+
+// Home Page (Task Management) 9. Display list of tasks fetched from localStorage 10. Include button to add new task, which opens TaskForm component
+
+// Task Form 11. Create Task form with fields: task name, description, priority, due date, status 12. On form submission: - Validate input (ensure all required fields are filled) - Save or update task data in localStorage
+
+// Task List 13. Fetch tasks from localStorage and display them 14. Include buttons for: - Editing task (opens TaskForm with task details pre-filled) - Deleting task (removes task from localStorage) - Marking task as completed (updates task status in localStorage)
+
+// Task Item 15. Display individual task details 16. Include buttons for: - Editing task - Deleting task - Marking task as completed
+
+// User Profile 17. Display user details fetched from localStorage 18. Allow user to update details 19. Save updated details to localStorage
+
+// Navbar 20. Provide navigation links to Home, Profile, and Logout
+
+// Utility Functions 21. Create functions for CRUD operations on tasks: - Add Task: Add new task to localStorage - View Tasks: Retrieve tasks from localStorage - Update Task: Update existing task in localStorage - Delete Task: Remove task from localStorage 22. Create functions for user management: - Register User: Save new user data to localStorage - Login User: Authenticate user and manage session state
+
+// Styling and Responsiveness 23. Ensure app is responsive for different screen sizes (320px, 480px, 768px, 1024px, 1200px) 24. Use consistent typography and color schemes 25. Implement hover effects and visual cues for interactive elements
+
+// Bonus Features 26. Add due date field when creating tasks 27. Show warnings for overdue tasks on user login 28. Create separate page to display completed tasks 29. Include completion date for each completed task 30. Enable URL-based task search functionality
+
+// Final Steps 31. Test the application thoroughly to ensure all features work as expected 32. Deploy the application 33. Share GitHub repository link with mentor for submission
+// Initialize the Application
+
+1. Initialize React project
+2. Install react-router-dom for routing
+
+// Configure Routing 3. Define routes for RegistrationPage, LoginPage, HomePage, and ProfilePage 4. Protect HomePage route to ensure only logged-in users can access it
+
+// User Registration 5. Create Registration form with fields: username, password, confirm password 6. On form submission: - Validate input (ensure passwords match and fields are not empty) - Save new user data to localStorage
+
+// User Login 7. Create Login form with fields: username, password 8. On form submission: - Validate input (ensure fields are not empty) - Authenticate user by checking credentials against localStorage data - If valid, redirect user to HomePage
+
+// Home Page (Task Management) 9. Display list of tasks fetched from localStorage 10. Include button to add new task, which opens TaskForm component
+
+// Task Form 11. Create Task form with fields: task name, description, priority, due date, status 12. On form submission: - Validate input (ensure all required fields are filled) - Save or update task data in localStorage
+
+// Task List 13. Fetch tasks from localStorage and display them 14. Include buttons for: - Editing task (opens TaskForm with task details pre-filled) - Deleting task (removes task from localStorage) - Marking task as completed (updates task status in localStorage)
+
+// Task Item 15. Display individual task details 16. Include buttons for: - Editing task - Deleting task - Marking task as completed
+
+// User Profile 17. Display user details fetched from localStorage 18. Allow user to update details 19. Save updated details to localStorage
+
+// Navbar 20. Provide navigation links to Home, Profile, and Logout
+
+// Utility Functions 21. Create functions for CRUD operations on tasks: - Add Task: Add new task to localStorage - View Tasks: Retrieve tasks from localStorage - Update Task: Update existing task in localStorage - Delete Task: Remove task from localStorage 22. Create functions for user management: - Register User: Save new user data to localStorage - Login User: Authenticate user and manage session state
+
+// Styling and Responsiveness 23. Ensure app is responsive for different screen sizes (320px, 480px, 768px, 1024px, 1200px) 24. Use consistent typography and color schemes 25. Implement hover effects and visual cues for interactive elements
+
+// Bonus Features 26. Add due date field when creating tasks 27. Show warnings for overdue tasks on user login 28. Create separate page to display completed tasks 29. Include completion date for each completed task 30. Enable URL-based task search functionality
+
+// Final Steps 31. Test the application thoroughly to ensure all features work as expected 32. Deploy the application 33. Share GitHub repository link with mentor for submission
+// Initialize the Application
+
+1. Initialize React project
+2. Install react-router-dom for routing
+
+// Configure Routing 3. Define routes for RegistrationPage, LoginPage, HomePage, and ProfilePage 4. Protect HomePage route to ensure only logged-in users can access it
+
+// User Registration 5. Create Registration form with fields: username, password, confirm password 6. On form submission: - Validate input (ensure passwords match and fields are not empty) - Save new user data to localStorage
+
+// User Login 7. Create Login form with fields: username, password 8. On form submission: - Validate input (ensure fields are not empty) - Authenticate user by checking credentials against localStorage data - If valid, redirect user to HomePage
+
+// Home Page (Task Management) 9. Display list of tasks fetched from localStorage 10. Include button to add new task, which opens TaskForm component
+
+// Task Form 11. Create Task form with fields: task name, description, priority, due date, status 12. On form submission: - Validate input (ensure all required fields are filled) - Save or update task data in localStorage
+
+// Task List 13. Fetch tasks from localStorage and display them 14. Include buttons for: - Editing task (opens TaskForm with task details pre-filled) - Deleting task (removes task from localStorage) - Marking task as completed (updates task status in localStorage)
+
+// Task Item 15. Display individual task details 16. Include buttons for: - Editing task - Deleting task - Marking task as completed
+
+// User Profile 17. Display user details fetched from localStorage 18. Allow user to update details 19. Save updated details to localStorage
+
+// Navbar 20. Provide navigation links to Home, Profile, and Logout
+
+// Utility Functions 21. Create functions for CRUD operations on tasks: - Add Task: Add new task to localStorage - View Tasks: Retrieve tasks from localStorage - Update Task: Update existing task in localStorage - Delete Task: Remove task from localStorage 22. Create functions for user management: - Register User: Save new user data to localStorage - Login User: Authenticate user and manage session state
+
+// Styling and Responsiveness 23. Ensure app is responsive for different screen sizes (320px, 480px, 768px, 1024px, 1200px) 24. Use consistent typography and color schemes 25. Implement hover effects and visual cues for interactive elements
+
+// Bonus Features 26. Add due date field when creating tasks 27. Show warnings for overdue tasks on user login 28. Create separate page to display completed tasks 29. Include completion date for each completed task 30. Enable URL-based task search functionality
+
+// Final Steps 31. Test the application thoroughly to ensure all features work as expected 32. Deploy the application 33. Share GitHub repository link with mentor for submission
+// Initialize the Application
+
+1. Initialize React project
+2. Install react-router-dom for routing
+
+// Configure Routing 3. Define routes for RegistrationPage, LoginPage, HomePage, and ProfilePage 4. Protect HomePage route to ensure only logged-in users can access it
+
+// User Registration 5. Create Registration form with fields: username, password, confirm password 6. On form submission: - Validate input (ensure passwords match and fields are not empty) - Save new user data to localStorage
+
+// User Login 7. Create Login form with fields: username, password 8. On form submission: - Validate input (ensure fields are not empty) - Authenticate user by checking credentials against localStorage data - If valid, redirect user to HomePage
+
+// Home Page (Task Management) 9. Display list of tasks fetched from localStorage 10. Include button to add new task, which opens TaskForm component
+
+// Task Form 11. Create Task form with fields: task name, description, priority, due date, status 12. On form submission: - Validate input (ensure all required fields are filled) - Save or update task data in localStorage
+
+// Task List 13. Fetch tasks from localStorage and display them 14. Include buttons for: - Editing task (opens TaskForm with task details pre-filled) - Deleting task (removes task from localStorage) - Marking task as completed (updates task status in localStorage)
+
+// Task Item 15. Display individual task details 16. Include buttons for: - Editing task - Deleting task - Marking task as completed
+
+// User Profile 17. Display user details fetched from localStorage 18. Allow user to update details 19. Save updated details to localStorage
+
+// Navbar 20. Provide navigation links to Home, Profile, and Logout
+
+// Utility Functions 21. Create functions for CRUD operations on tasks: - Add Task: Add new task to localStorage - View Tasks: Retrieve tasks from localStorage - Update Task: Update existing task in localStorage - Delete Task: Remove task from localStorage 22. Create functions for user management: - Register User: Save new user data to localStorage - Login User: Authenticate user and manage session state
+
+// Styling and Responsiveness 23. Ensure app is responsive for different screen sizes (320px, 480px, 768px, 1024px, 1200px) 24. Use consistent typography and color schemes 25. Implement hover effects and visual cues for interactive elements
+
+// Bonus Features 26. Add due date field when creating tasks 27. Show warnings for overdue tasks on user login 28. Create separate page to display completed tasks 29. Include completion date for each completed task 30. Enable URL-based task search functionality
+
+// Final Steps 31. Test the application thoroughly to ensure all features work as expected 32. Deploy the application 33. Share GitHub repository link with mentor for submission
+// Initialize the Application
+
+1. Initialize React project
+2. Install react-router-dom for routing
+
+// Configure Routing 3. Define routes for RegistrationPage, LoginPage, HomePage, and ProfilePage 4. Protect HomePage route to ensure only logged-in users can access it
+
+// User Registration 5. Create Registration form with fields: username, password, confirm password 6. On form submission: - Validate input (ensure passwords match and fields are not empty) - Save new user data to localStorage
+
+// User Login 7. Create Login form with fields: username, password 8. On form submission: - Validate input (ensure fields are not empty) - Authenticate user by checking credentials against localStorage data - If valid, redirect user to HomePage
+
+// Home Page (Task Management) 9. Display list of tasks fetched from localStorage 10. Include button to add new task, which opens TaskForm component
+
+// Task Form 11. Create Task form with fields: task name, description, priority, due date, status 12. On form submission: - Validate input (ensure all required fields are filled) - Save or update task data in localStorage
+
+// Task List 13. Fetch tasks from localStorage and display them 14. Include buttons for: - Editing task (opens TaskForm with task details pre-filled) - Deleting task (removes task from localStorage) - Marking task as completed (updates task status in localStorage)
+
+// Task Item 15. Display individual task details 16. Include buttons for: - Editing task - Deleting task - Marking task as completed
+
+// User Profile 17. Display user details fetched from localStorage 18. Allow user to update details 19. Save updated details to localStorage
+
+// Navbar 20. Provide navigation links to Home, Profile, and Logout
+
+// Utility Functions 21. Create functions for CRUD operations on tasks: - Add Task: Add new task to localStorage - View Tasks: Retrieve tasks from localStorage - Update Task: Update existing task in localStorage - Delete Task: Remove task from localStorage 22. Create functions for user management: - Register User: Save new user data to localStorage - Login User: Authenticate user and manage session state
+
+// Styling and Responsiveness 23. Ensure app is responsive for different screen sizes (320px, 480px, 768px, 1024px, 1200px) 24. Use consistent typography and color schemes 25. Implement hover effects and visual cues for interactive elements
+
+// Bonus Features 26. Add due date field when creating tasks 27. Show warnings for overdue tasks on user login 28. Create separate page to display completed tasks 29. Include completion date for each completed task 30. Enable URL-based task search functionality
+
+// Final Steps 31. Test the application thoroughly to ensure all features work as expected 32. Deploy the application 33. Share GitHub repository link with mentor for submission
+// Initialize the Application
+
+1. Initialize React project
+2. Install react-router-dom for routing
+
+// Configure Routing 3. Define routes for RegistrationPage, LoginPage, HomePage, and ProfilePage 4. Protect HomePage route to ensure only logged-in users can access it
+
+// User Registration 5. Create Registration form with fields: username, password, confirm password 6. On form submission: - Validate input (ensure passwords match and fields are not empty) - Save new user data to localStorage
+
+// User Login 7. Create Login form with fields: username, password 8. On form submission: - Validate input (ensure fields are not empty) - Authenticate user by checking credentials against localStorage data - If valid, redirect user to HomePage
+
+// Home Page (Task Management) 9. Display list of tasks fetched from localStorage 10. Include button to add new task, which opens TaskForm component
+
+// Task Form 11. Create Task form with fields: task name, description, priority, due date, status 12. On form submission: - Validate input (ensure all required fields are filled) - Save or update task data in localStorage
+
+// Task List 13. Fetch tasks from localStorage and display them 14. Include buttons for: - Editing task (opens TaskForm with task details pre-filled) - Deleting task (removes task from localStorage) - Marking task as completed (updates task status in localStorage)
+
+// Task Item 15. Display individual task details 16. Include buttons for: - Editing task - Deleting task - Marking task as completed
+
+// User Profile 17. Display user details fetched from localStorage 18. Allow user to update details 19. Save updated details to localStorage
+
+// Navbar 20. Provide navigation links to Home, Profile, and Logout
+
+// Utility Functions 21. Create functions for CRUD operations on tasks: - Add Task: Add new task to localStorage - View Tasks: Retrieve tasks from localStorage - Update Task: Update existing task in localStorage - Delete Task: Remove task from localStorage 22. Create functions for user management: - Register User: Save new user data to localStorage - Login User: Authenticate user and manage session state
+
+// Styling and Responsiveness 23. Ensure app is responsive for different screen sizes (320px, 480px, 768px, 1024px, 1200px) 24. Use consistent typography and color schemes 25. Implement hover effects and visual cues for interactive elements
+
+// Bonus Features 26. Add due date field when creating tasks 27. Show warnings for overdue tasks on user login 28. Create separate page to display completed tasks 29. Include completion date for each completed task 30. Enable URL-based task search functionality
+
+// Final Steps 31. Test the application thoroughly to ensure all features work as expected 32. Deploy the application 33. Share GitHub repository link with mentor for submission
+// Initialize the Application
+
+1. Initialize React project
+2. Install react-router-dom for routing
+
+// Configure Routing 3. Define routes for RegistrationPage, LoginPage, HomePage, and ProfilePage 4. Protect HomePage route to ensure only logged-in users can access it
+
+// User Registration 5. Create Registration form with fields: username, password, confirm password 6. On form submission: - Validate input (ensure passwords match and fields are not empty) - Save new user data to localStorage
+
+// User Login 7. Create Login form with fields: username, password 8. On form submission: - Validate input (ensure fields are not empty) - Authenticate user by checking credentials against localStorage data - If valid, redirect user to HomePage
+
+// Home Page (Task Management) 9. Display list of tasks fetched from localStorage 10. Include button to add new task, which opens TaskForm component
+
+// Task Form 11. Create Task form with fields: task name, description, priority, due date, status 12. On form submission: - Validate input (ensure all required fields are filled) - Save or update task data in localStorage
+
+// Task List 13. Fetch tasks from localStorage and display them 14. Include buttons for: - Editing task (opens TaskForm with task details pre-filled) - Deleting task (removes task from localStorage) - Marking task as completed (updates task status in localStorage)
+
+// Task Item 15. Display individual task details 16. Include buttons for: - Editing task - Deleting task - Marking task as completed
+
+// User Profile 17. Display user details fetched from localStorage 18. Allow user to update details 19. Save updated details to localStorage
+
+// Navbar 20. Provide navigation links to Home, Profile, and Logout
+
+// Utility Functions 21. Create functions for CRUD operations on tasks: - Add Task: Add new task to localStorage - View Tasks: Retrieve tasks from localStorage - Update Task: Update existing task in localStorage - Delete Task: Remove task from localStorage 22. Create functions for user management: - Register User: Save new user data to localStorage - Login User: Authenticate user and manage session state
+
+// Styling and Responsiveness 23. Ensure app is responsive for different screen sizes (320px, 480px, 768px, 1024px, 1200px) 24. Use consistent typography and color schemes 25. Implement hover effects and visual cues for interactive elements
+
+// Bonus Features 26. Add due date field when creating tasks 27. Show warnings for overdue tasks on user login 28. Create separate page to display completed tasks 29. Include completion date for each completed task 30. Enable URL-based task search functionality
+
+// Final Steps 31. Test the application thoroughly to ensure all features work as expected 32. Deploy the application 33. Share GitHub repository link with mentor for submission
