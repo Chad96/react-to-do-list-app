@@ -4,6 +4,12 @@ import KanbanBoard from "./components/KanbanBoard";
 import UserDetails from "./components/UserDetails";
 import TaskFilters from "./components/TaskFilters";
 import "./App.css";
+import {
+  getTasksFromStorage,
+  saveTasksToStorage,
+  getUserDetailsFromStorage,
+  saveUserDetailsToStorage,
+} from "./utils/localStorage";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -16,22 +22,18 @@ const App = () => {
   });
 
   useEffect(() => {
-    const storedTasks = localStorage.getItem("tasks");
-    const storedUserDetails = localStorage.getItem("userDetails");
-    if (storedTasks) {
-      setTasks(JSON.parse(storedTasks));
-    }
-    if (storedUserDetails) {
-      setUserDetails(JSON.parse(storedUserDetails));
-    }
+    const storedTasks = getTasksFromStorage();
+    const storedUserDetails = getUserDetailsFromStorage();
+    setTasks(storedTasks);
+    setUserDetails(storedUserDetails);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    saveTasksToStorage(tasks);
   }, [tasks]);
 
   useEffect(() => {
-    localStorage.setItem("userDetails", JSON.stringify(userDetails));
+    saveUserDetailsToStorage(userDetails);
   }, [userDetails]);
 
   const addTask = (task) => {
@@ -63,7 +65,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1> Todo List App</h1>
+      <h1>Kanban Board</h1>
       <TaskForm
         addTask={addTask}
         updateTask={updateTask}
