@@ -4,12 +4,7 @@ import KanbanBoard from "./components/KanbanBoard";
 import UserDetails from "./components/UserDetails";
 import TaskFilters from "./components/TaskFilters";
 import "./App.css";
-import {
-  getTasksFromStorage,
-  saveTasksToStorage,
-  getUserDetailsFromStorage,
-  saveUserDetailsToStorage,
-} from "./utils/localStorage";
+import { getTasksFromStorage, saveTasksToStorage } from "./utils/localStorage";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -20,21 +15,18 @@ const App = () => {
     priority: "",
     dueDate: "",
   });
+  const [showTasks, setShowTasks] = useState(false);
 
+  // Load tasks from localStorage on initial render
   useEffect(() => {
     const storedTasks = getTasksFromStorage();
-    const storedUserDetails = getUserDetailsFromStorage();
     setTasks(storedTasks);
-    setUserDetails(storedUserDetails);
   }, []);
 
+  // Save tasks to localStorage whenever they change
   useEffect(() => {
     saveTasksToStorage(tasks);
   }, [tasks]);
-
-  useEffect(() => {
-    saveUserDetailsToStorage(userDetails);
-  }, [userDetails]);
 
   const addTask = (task) => {
     task.id = new Date().getTime();
@@ -65,18 +57,23 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Kanban Board</h1>
+      <h1>Task Manager </h1>
       <TaskForm
         addTask={addTask}
         updateTask={updateTask}
         taskToEdit={taskToEdit}
       />
       <TaskFilters setFilter={setFilter} />
-      <KanbanBoard
-        tasks={filteredTasks}
-        setTaskToEdit={setTaskToEdit}
-        deleteTask={deleteTask}
-      />
+      <button onClick={() => setShowTasks(!showTasks)}>
+        {showTasks ? "Hide Tasks" : "Show Tasks"}
+      </button>
+      {showTasks && (
+        <KanbanBoard
+          tasks={filteredTasks}
+          setTaskToEdit={setTaskToEdit}
+          deleteTask={deleteTask}
+        />
+      )}
       <UserDetails
         userDetails={userDetails}
         updateUserDetails={updateUserDetails}

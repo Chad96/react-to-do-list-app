@@ -4,7 +4,7 @@ const TaskForm = ({ addTask, updateTask, taskToEdit }) => {
   const [task, setTask] = useState({
     title: "",
     description: "",
-    priority: "",
+    priority: "low",
     status: "todo",
     dueDate: "",
   });
@@ -30,7 +30,7 @@ const TaskForm = ({ addTask, updateTask, taskToEdit }) => {
     setTask({
       title: "",
       description: "",
-      priority: "",
+      priority: "low",
       status: "todo",
       dueDate: "",
     });
@@ -53,23 +53,12 @@ const TaskForm = ({ addTask, updateTask, taskToEdit }) => {
         placeholder="Task Description"
         required
       ></textarea>
-      <select
-        name="priority"
-        value={task.priority}
-        onChange={handleChange}
-        required
-      >
-        <option value="">Select Priority</option>
+      <select name="priority" value={task.priority} onChange={handleChange}>
         <option value="low">Low</option>
         <option value="medium">Medium</option>
         <option value="high">High</option>
       </select>
-      <select
-        name="status"
-        value={task.status}
-        onChange={handleChange}
-        required
-      >
+      <select name="status" value={task.status} onChange={handleChange}>
         <option value="todo">To Do</option>
         <option value="inProgress">In Progress</option>
         <option value="done">Done</option>

@@ -24,7 +24,7 @@ const UserDetails = ({ userDetails, updateUserDetails }) => {
         name="name"
         value={details.name}
         onChange={handleChange}
-        placeholder="Your Name"
+        placeholder="Name"
         required
       />
       <input
@@ -32,7 +32,7 @@ const UserDetails = ({ userDetails, updateUserDetails }) => {
         name="email"
         value={details.email}
         onChange={handleChange}
-        placeholder="Your Email"
+        placeholder="Email"
         required
       />
       <button type="submit">Update Details</button>

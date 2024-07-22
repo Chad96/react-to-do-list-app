@@ -1,3 +1,5 @@
+/* src/App.css */
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
@@ -93,4 +95,31 @@ button:hover {
 
 .task-actions button:last-child:hover {
   background-color: #c82333;
+}
+
+/* Task status colors */
+.task-todo {
+  border-left: 5px solid #ffcc00;
+}
+
+.task-in-progress {
+  border-left: 5px solid #007bff;
+}
+
+.task-done {
+  border-left: 5px solid #28a745;
+}
+/* Add styles for the button */
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #218838;
 }
