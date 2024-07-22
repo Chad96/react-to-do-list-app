@@ -1,0 +1,14 @@
+/* Responsive styles for the application */
+@media (max-width: 768px) {
+  nav ul li {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  form input,
+  form textarea,
+  form select,
+  form button {
+    width: 100%;
+  }
+}
