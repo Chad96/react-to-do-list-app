@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
 import TaskForm from "./components/TaskForm";
-import TaskList from "./components/TaskList";
+import KanbanBoard from "./components/KanbanBoard";
 import "./App.css";
 
 const App = () => {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState({ todo: [], inProgress: [], done: [] });
   const [taskToEdit, setTaskToEdit] = useState(null);
-  const [showTasks, setShowTasks] = useState(true);
 
   useEffect(() => {
-    const storedTasks = JSON.parse(localStorage.getItem("tasks"));
+    const storedTasks = localStorage.getItem("tasks");
     if (storedTasks) {
-      setTasks(storedTasks);
+      setTasks(JSON.parse(storedTasks));
     }
   }, []);
 
@@ -21,38 +20,37 @@ const App = () => {
 
   const addTask = (task) => {
     task.id = new Date().getTime();
-    setTasks([...tasks, task]);
+    setTasks((prevTasks) => ({
+      ...prevTasks,
+      todo: [...prevTasks.todo, task],
+    }));
   };
 
-  const deleteTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id));
+  const moveTask = (id, from, to) => {
+    const taskToMove = tasks[from].find((task) => task.id === id);
+    setTasks((prevTasks) => ({
+      ...prevTasks,
+      [from]: prevTasks[from].filter((task) => task.id !== id),
+      [to]: [...prevTasks[to], taskToMove],
+    }));
   };
 
-  const editTask = (updatedTask) => {
-    setTasks(
-      tasks.map((task) => (task.id === updatedTask.id ? updatedTask : task))
-    );
-    setTaskToEdit(null);
-  };
-
-  const toggleTasksVisibility = () => {
-    setShowTasks(!showTasks);
+  const deleteTask = (id, column) => {
+    setTasks((prevTasks) => ({
+      ...prevTasks,
+      [column]: prevTasks[column].filter((task) => task.id !== id),
+    }));
   };
 
   return (
     <div className="App">
-      <h1>To-Do List</h1>
-      <TaskForm addTask={addTask} editTask={editTask} taskToEdit={taskToEdit} />
-      <button onClick={toggleTasksVisibility}>
-        {showTasks ? "Hide Tasks" : "View Saved Tasks"}
-      </button>
-      {showTasks && (
-        <TaskList
-          tasks={tasks}
-          deleteTask={deleteTask}
-          setTaskToEdit={setTaskToEdit}
-        />
-      )}
+      <h1>Kanban Board</h1>
+      <TaskForm
+        addTask={addTask}
+        editTask={setTaskToEdit}
+        taskToEdit={taskToEdit}
+      />
+      <KanbanBoard tasks={tasks} moveTask={moveTask} deleteTask={deleteTask} />
     </div>
   );
 };

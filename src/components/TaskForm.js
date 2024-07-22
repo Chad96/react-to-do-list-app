@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const TaskForm = ({ addTask, editTask, taskToEdit }) => {
+const TaskForm = ({ addTask, taskToEdit }) => {
   const [task, setTask] = useState({ title: "", description: "" });
 
   useEffect(() => {
@@ -11,16 +11,12 @@ const TaskForm = ({ addTask, editTask, taskToEdit }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setTask({ ...task, [name]: value });
+    setTask((prevTask) => ({ ...prevTask, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (taskToEdit) {
-      editTask(task);
-    } else {
-      addTask(task);
-    }
+    addTask(task);
     setTask({ title: "", description: "" });
   };
 
@@ -41,7 +37,7 @@ const TaskForm = ({ addTask, editTask, taskToEdit }) => {
         placeholder="Task Description"
         required
       ></textarea>
-      <button type="submit">{taskToEdit ? "Update Task" : "Add Task"}</button>
+      <button type="submit">Add Task</button>
     </form>
   );
 };
