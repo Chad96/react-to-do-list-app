@@ -1,35 +1,46 @@
-// src/components/RegistrationForm.js
-
 import React, { useState } from "react";
-import { useAuth } from "../context/AuthContext";
 
-const RegistrationForm = () => {
-  const { login } = useAuth();
+const RegistrationForm = ({ registerUser }) => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleRegister = () => {
-    // Handle registration logic here, e.g., save user details to localStorage
-    login({ email }); // Set the user in context on successful registration
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    registerUser({ name, email, password });
   };
 
   return (
-    <form onSubmit={(e) => e.preventDefault()}>
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="button" onClick={handleRegister}>
-        Register
-      </button>
+    <form onSubmit={handleSubmit}>
+      <h2>Register</h2>
+      <label>
+        Name:
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+      </label>
+      <label>
+        Email:
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+      </label>
+      <label>
+        Password:
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+      </label>
+      <button type="submit">Register</button>
     </form>
   );
 };

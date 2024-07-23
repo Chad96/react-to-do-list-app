@@ -1,35 +1,36 @@
-// src/components/LoginForm.js
-
 import React, { useState } from "react";
-import { useAuth } from "../context/AuthContext";
 
-const LoginForm = () => {
-  const { login } = useAuth();
+const LoginForm = ({ loginUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
-    // Handle login logic here
-    login({ email }); // Set the user in context on successful login
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    loginUser({ email, password });
   };
 
   return (
-    <form onSubmit={(e) => e.preventDefault()}>
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="button" onClick={handleLogin}>
-        Login
-      </button>
+    <form onSubmit={handleSubmit}>
+      <h2>Login</h2>
+      <label>
+        Email:
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+      </label>
+      <label>
+        Password:
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+      </label>
+      <button type="submit">Login</button>
     </form>
   );
 };
