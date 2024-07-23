@@ -1,42 +1,20 @@
-import React, { useState, useEffect } from "react";
+// src/components/UserDetails.js
+import React from "react";
 
-const UserDetails = ({ userDetails, updateUserDetails }) => {
-  const [details, setDetails] = useState(userDetails);
-
-  useEffect(() => {
-    setDetails(userDetails);
-  }, [userDetails]);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setDetails((prevDetails) => ({ ...prevDetails, [name]: value }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    updateUserDetails(details);
-  };
-
+const UserDetails = ({ userDetails }) => {
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="name"
-        value={details.name}
-        onChange={handleChange}
-        placeholder="Name"
-        required
-      />
-      <input
-        type="email"
-        name="email"
-        value={details.email}
-        onChange={handleChange}
-        placeholder="Email"
-        required
-      />
-      <button type="submit">Update Details</button>
-    </form>
+    <div>
+      <h2>User Details</h2>
+      <p>Name: {userDetails.name}</p>
+      <p>Email: {userDetails.email}</p>
+      {userDetails.profilePicture && (
+        <img
+          src={userDetails.profilePicture}
+          alt="Profile"
+          style={{ width: "100px", height: "100px", borderRadius: "50%" }}
+        />
+      )}
+    </div>
   );
 };
 
