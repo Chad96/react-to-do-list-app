@@ -20,7 +20,10 @@ const App = () => {
   // Load tasks from localStorage on initial render
   useEffect(() => {
     const storedTasks = getTasksFromStorage();
-    setTasks(storedTasks);
+    if (storedTasks.length > 0) {
+      // Check if there are stored tasks
+      setTasks(storedTasks);
+    }
   }, []);
 
   // Save tasks to localStorage whenever they change
@@ -57,7 +60,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Task Manager </h1>
+      <h1>Task Manager</h1>
       <TaskForm
         addTask={addTask}
         updateTask={updateTask}
