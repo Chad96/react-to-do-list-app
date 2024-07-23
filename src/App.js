@@ -1,3 +1,4 @@
+// src/App.js
 import React, { useState, useEffect } from "react";
 import TaskForm from "./components/TaskForm";
 import KanbanBoard from "./components/KanbanBoard";
@@ -5,13 +6,18 @@ import UserDetails from "./components/UserDetails";
 import TaskFilters from "./components/TaskFilters";
 import RegistrationForm from "./components/RegistrationForm";
 import LoginForm from "./components/LoginForm";
+import ProfileForm from "./components/ProfileForm";
 import "./App.css";
 import { getTasksFromStorage, saveTasksToStorage } from "./utils/localStorage";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
   const [taskToEdit, setTaskToEdit] = useState(null);
-  const [userDetails, setUserDetails] = useState({ name: "", email: "" });
+  const [userDetails, setUserDetails] = useState({
+    name: "",
+    email: "",
+    profilePicture: "",
+  });
   const [filter, setFilter] = useState({
     status: "",
     priority: "",
@@ -21,16 +27,13 @@ const App = () => {
   const [isRegistered, setIsRegistered] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Load tasks from localStorage on initial render
   useEffect(() => {
     const storedTasks = getTasksFromStorage();
     if (storedTasks.length > 0) {
-      // Check if there are stored tasks
       setTasks(storedTasks);
     }
   }, []);
 
-  // Save tasks to localStorage whenever they change
   useEffect(() => {
     saveTasksToStorage(tasks);
   }, [tasks]);
@@ -63,13 +66,11 @@ const App = () => {
   });
 
   const registerUser = (user) => {
-    // In a real app, you'd save this to a backend
     setUserDetails(user);
     setIsRegistered(true);
   };
 
   const loginUser = (user) => {
-    // In a real app, you'd verify this with a backend
     if (
       user.email === userDetails.email &&
       user.password === userDetails.password
@@ -81,7 +82,7 @@ const App = () => {
   };
 
   if (!isRegistered) {
-    return <RegistrationForm registerUser={registerUser} />;
+    return <ProfileForm registerUser={registerUser} />;
   }
 
   if (!isLoggedIn) {
