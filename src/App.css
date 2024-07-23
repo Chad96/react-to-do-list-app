@@ -123,3 +123,33 @@ button {
 button:hover {
   background-color: #218838;
 }
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+    width: 100%; /* Full width on small screens */
+  }
+
+  .kanban-board {
+    flex-direction: column; /* Stacks columns vertically on small screens */
+    gap: 10px; /* Adds space between columns */
+  }
+
+  .kanban-column {
+    width: 100%; /* Full width for each column on small screens */
+    max-width: none; /* Removes max-width on small screens */
+  }
+
+  .task-item button {
+    margin-right: 0; /* Removes margin on small screens */
+  }
+
+  .task-actions {
+    flex-direction: column; /* Stacks buttons vertically on small screens */
+    gap: 5px; /* Adds space between action buttons */
+  }
+
+  .task-actions button {
+    width: 100%; /* Full width for action buttons on small screens */
+  }
+}
