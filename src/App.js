@@ -1,5 +1,10 @@
-// src/App.js
 import React, { useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import TaskForm from "./components/TaskForm";
 import KanbanBoard from "./components/KanbanBoard";
 import UserDetails from "./components/UserDetails";
@@ -81,38 +86,66 @@ const App = () => {
     }
   };
 
-  if (!isRegistered) {
-    return <ProfileForm registerUser={registerUser} />;
-  }
-
-  if (!isLoggedIn) {
-    return <LoginForm loginUser={loginUser} />;
-  }
-
   return (
-    <div className="App">
-      <h1>Task Manager</h1>
-      <TaskForm
-        addTask={addTask}
-        updateTask={updateTask}
-        taskToEdit={taskToEdit}
-      />
-      <TaskFilters setFilter={setFilter} />
-      <button onClick={() => setShowTasks(!showTasks)}>
-        {showTasks ? "Hide Tasks" : "Show Tasks"}
-      </button>
-      {showTasks && (
-        <KanbanBoard
-          tasks={filteredTasks}
-          setTaskToEdit={setTaskToEdit}
-          deleteTask={deleteTask}
-        />
-      )}
-      <UserDetails
-        userDetails={userDetails}
-        updateUserDetails={updateUserDetails}
-      />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route
+            path="/register"
+            element={
+              !isRegistered ? (
+                <ProfileForm registerUser={registerUser} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              !isLoggedIn ? (
+                <LoginForm loginUser={loginUser} />
+              ) : (
+                <Navigate to="/tasks" />
+              )
+            }
+          />
+          <Route
+            path="/tasks"
+            element={
+              isLoggedIn ? (
+                <>
+                  <h1>Task Manager</h1>
+                  <TaskForm
+                    addTask={addTask}
+                    updateTask={updateTask}
+                    taskToEdit={taskToEdit}
+                  />
+                  <TaskFilters setFilter={setFilter} />
+                  <button onClick={() => setShowTasks(!showTasks)}>
+                    {showTasks ? "Hide Tasks" : "Show Tasks"}
+                  </button>
+                  {showTasks && (
+                    <KanbanBoard
+                      tasks={filteredTasks}
+                      setTaskToEdit={setTaskToEdit}
+                      deleteTask={deleteTask}
+                    />
+                  )}
+                  <UserDetails
+                    userDetails={userDetails}
+                    updateUserDetails={updateUserDetails}
+                  />
+                </>
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route path="/" element={<Navigate to="/register" />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
