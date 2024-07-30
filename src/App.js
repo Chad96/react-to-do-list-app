@@ -9,7 +9,6 @@ import TaskForm from "./components/TaskForm";
 import KanbanBoard from "./components/KanbanBoard";
 import UserDetails from "./components/UserDetails";
 import TaskFilters from "./components/TaskFilters";
-import RegistrationForm from "./components/RegistrationForm";
 import LoginForm from "./components/LoginForm";
 import ProfileForm from "./components/ProfileForm";
 import "./App.css";
@@ -93,20 +92,20 @@ const App = () => {
           <Route
             path="/register"
             element={
-              !isRegistered ? (
-                <ProfileForm registerUser={registerUser} />
-              ) : (
+              isRegistered ? (
                 <Navigate to="/login" />
+              ) : (
+                <ProfileForm registerUser={registerUser} />
               )
             }
           />
           <Route
             path="/login"
             element={
-              !isLoggedIn ? (
-                <LoginForm loginUser={loginUser} />
-              ) : (
+              isLoggedIn ? (
                 <Navigate to="/tasks" />
+              ) : (
+                <LoginForm loginUser={loginUser} />
               )
             }
           />
@@ -142,7 +141,16 @@ const App = () => {
               )
             }
           />
-          <Route path="/" element={<Navigate to="/register" />} />
+          <Route
+            path="/"
+            element={
+              isRegistered ? (
+                <Navigate to="/login" />
+              ) : (
+                <Navigate to="/register" />
+              )
+            }
+          />
         </Routes>
       </div>
     </Router>
