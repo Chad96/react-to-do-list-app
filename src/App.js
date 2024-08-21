@@ -11,6 +11,7 @@ import UserDetails from "./components/UserDetails";
 import TaskFilters from "./components/TaskFilters";
 import LoginForm from "./components/LoginForm";
 import ProfileForm from "./components/ProfileForm";
+import Navbar from "./components/Navbar"; // Import Navbar
 import "./App.css";
 import { getTasksFromStorage, saveTasksToStorage } from "./utils/localStorage";
 
@@ -88,6 +89,7 @@ const App = () => {
   return (
     <Router>
       <div className="App">
+        <Navbar /> {/* Include Navbar here */}
         <Routes>
           <Route
             path="/register"
